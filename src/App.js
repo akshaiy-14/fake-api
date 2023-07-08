@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./App.css";
+import ContentList from "./ContentList.js";
+import Header from "./Header";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -38,41 +40,15 @@ function App() {
 
   return (
     <>
+    <Header />
+    <br></br>
     <div className="button-container">
       <button onClick={fetchPosts}> Fetch Posts </button>
       <button onClick={fetchComments}> Fetch Comments </button>
       <button onClick={fetchUsers}> Fetch Users </button>
     </div>
     <div>
-      <ul>
-          {p && posts.map(post => { 
-            return (
-              <li key={post.id}>
-                {post.title}
-              </li>
-            )
-          })}
-        </ul>
-
-        <ul>
-          {c && comments.map(comment => { 
-            return (
-              <li key={comment.id}>
-                {comment.body}
-              </li>
-            )
-          })}
-        </ul>
-
-        <ul>
-          {u && users.map(user => { 
-            return (
-              <li key={user.id}>
-                {user.name}
-              </li>
-            )
-          })}
-        </ul>
+      <ContentList p={p} c={c} u={u} posts={posts} comments={comments} users={users} />
     </div>
     </>
   );
