@@ -2,9 +2,10 @@ import React from 'react'
 
 const CommentItem = ( {comment} ) => {
   return (
-    <>
-        <li key={comment.id}> {comment.body} </li>
-    </>
+    <tr>
+        <td> {comment.email}  </td>
+        <td> {comment.body} </td>
+    </tr>
   )
 }
 

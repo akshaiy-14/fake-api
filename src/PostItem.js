@@ -2,9 +2,10 @@ import React from 'react'
 
 const PostItem = ( {post} ) => {
   return (
-    <>
-        <li key={post.id}> {post.title} </li>
-    </>
+    <tr>
+        <td> {post.title}  </td>
+        <td> {post.body} </td>
+    </tr>
   )
 }
 
